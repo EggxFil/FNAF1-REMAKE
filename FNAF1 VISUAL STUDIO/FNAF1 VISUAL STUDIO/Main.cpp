@@ -1,18 +1,29 @@
 ﻿#include <iostream>
 #include "Map.h"
 
-std::string action;
-void Actions(const std::string newaction)
+//std::string action;
+std::string a;
+class Actions
 {
-	if (newaction == "close left door" || "Close right door")
+public:
+
+	Actions(std::string action)
 	{
-		leftdoor = "|||";
+		if (action == "close left door" || "Close right door")
+		{
+			leftdoor = "|||";
+			printMap();
+		}
 	}
-}
+};
+
+
+
+
 int main()
 {
 	printMap();
-	std::cin >> action;
-	Actions(action);
+	std::cin >> a;
+	Actions newaction(a);
 
 }
