@@ -1,13 +1,18 @@
 #pragma once
 #include <iostream>
+#include "Main.cpp"
 bool doorclosedLEFT = false;
 bool doorclosedRIGHT = false;
-class doors
+class Mapupdate
 {
 public:
 	std::string leftdoor = "   ";
 	std::string rightdoor = "   ";
-
+	Mapupdate(const int& doornum)
+	{
+		leftdoor = "|||";
+		std::cout << "this works" << '\n';
+	}
 	void printMap()
 	{
 

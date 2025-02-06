@@ -1,18 +1,21 @@
 ﻿#include <iostream>
 #include "Map.h"
 
-//std::string action;
 std::string a;
 class Actions
 {
 public:
+	Actions()
+	{
+		std::cout << "error";
+	}
 
-	Actions(std::string action)
+	Actions(std::string& action)
 	{
 		if (action == "close left door" || "Close right door")
 		{
-			leftdoor = "|||";
-			printMap();
+			Mapupdate leftdoorupdate(1);
+			//printMap();
 		}
 	}
 };
