@@ -4,49 +4,44 @@
 
 bool isgameon = true;
 std::string a;
-class Actions
-{
-public:
-	std::string b = "left";
-	std::string c = "right";
-	Actions()
-	{
-		std::cout << "error";
-	}
 
-	Actions(std::string action)
+
+void Actions(std::string action)
+{
+	if (action == "door")
 	{
-		
-		if (action == b)
+		Print("which door?");
+		returnInput(action);
+
+		if (action == "left")
 		{
 			Print("left door called");
-			Mapupdate leftdoorupdate(1);
-			
+			Mapupdate(1);
+
 		}
-		else if (action == c)
+		else if (action == "right")
 		{
 			Print("right door called");
-			Mapupdate rightdoorupdate(2);
+			Mapupdate(2);
 
 		}
 		else
 		{
 			Print("oops");
 		}
-		Print("if statment missed");
-		
 	}
-};
+	
+	
+}
 
 
 
 
 int main()
 {
-	Mapupdate orignialprint(0);
-
-	std::cin >> a;
-	Actions newaction(a);
+	Mapupdate(0);
+	returnInput(a);
+	Actions(a);
 	
 	
 
