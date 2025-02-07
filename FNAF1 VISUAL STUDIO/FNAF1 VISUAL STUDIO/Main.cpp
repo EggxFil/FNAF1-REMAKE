@@ -1,22 +1,40 @@
 ﻿#include <iostream>
 #include "Map.h"
+#include "Print.h"
 
+bool isgameon = true;
 std::string a;
 class Actions
 {
 public:
+	std::string b = "left";
+	std::string c = "right";
 	Actions()
 	{
 		std::cout << "error";
 	}
 
-	Actions(std::string& action)
+	Actions(std::string action)
 	{
-		if (action == "close left door" || "Close right door")
+		
+		if (action == b)
 		{
+			Print("left door called");
 			Mapupdate leftdoorupdate(1);
-			//printMap();
+			
 		}
+		else if (action == c)
+		{
+			Print("right door called");
+			Mapupdate rightdoorupdate(2);
+
+		}
+		else
+		{
+			Print("oops");
+		}
+		Print("if statment missed");
+		
 	}
 };
 
@@ -25,8 +43,11 @@ public:
 
 int main()
 {
-	printMap();
+	Mapupdate orignialprint(0);
+
 	std::cin >> a;
 	Actions newaction(a);
+	
+	
 
 }
