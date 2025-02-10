@@ -19,7 +19,3 @@ class animatronic
 {
 
 };
-int main()
-{
-
-}

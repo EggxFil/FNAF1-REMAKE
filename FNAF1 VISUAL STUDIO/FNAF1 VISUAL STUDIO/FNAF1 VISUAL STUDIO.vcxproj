@@ -130,6 +130,7 @@
     <ClCompile Include="Animatronic.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Print.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Map.h" />
