@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
-void Print(const std::string& text);
+template <typename t>
+void Print(const t& text);
 
 std::string returnInput(std::string& text);

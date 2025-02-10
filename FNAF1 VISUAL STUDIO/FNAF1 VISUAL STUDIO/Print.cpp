@@ -1,5 +1,6 @@
 #include <iostream>
-void Print(const std::string& text)
+template <typename t>
+void Print(const t& text)
 {
 	std::cout << text << '\n';
 }

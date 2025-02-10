@@ -1,9 +1,9 @@
 ﻿
-//#include "Map.h"
+#include "Map.h"
 #include "Print.h"
 #include <string>
+#include "Animatronic.h"
 
-void Mapupdate(const int& num);
 
 bool isgameon = true;
 std::string a;
@@ -68,9 +68,11 @@ void gameloop()
 {
 	while (isgameon == true)
 	{
+		animatronic Freddy();
 		Print("what do you want to change?");
 		returnInput(a);
 		Actions(a);
+		
 	}
 }
 

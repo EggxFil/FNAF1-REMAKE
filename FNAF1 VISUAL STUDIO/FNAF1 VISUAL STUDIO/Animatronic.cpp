@@ -1,15 +1,29 @@
-
+#include <string>
 #include "Print.h"
+#include <iostream>
 
-class animatronicArray
+class animatronicStages
 {
 public:
 	int* harray;
-	animatronicArray()
+	int arraybuffer = 0;
+	animatronicStages()
 	{
 		harray = new int[5];
+
+		for (int i = 0; 5 > i; i++)
+		{
+			arraybuffer++;
+			harray[i] = arraybuffer;
+			std::cout << harray[i] << '\n';
+		}
 	}
-	~animatronicArray()
+	int returnarray(const int& index)
+	{
+		return harray[index];
+	}
+
+	~animatronicStages()
 	{
 		delete harray;
 	}
@@ -18,9 +32,12 @@ public:
 class animatronic
 {
 public:
-	int* stage;
-	animatronic()
+	int* stagebuffer;
+	int stage;
+	animatronic(std::string name, int stage)
 	{
-
+		animatronicStages newstage();
+		stage = newstage().returnarray(0);
+		Print(stage);
 	}
 };
