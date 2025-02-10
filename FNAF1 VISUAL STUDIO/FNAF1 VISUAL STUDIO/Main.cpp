@@ -1,6 +1,9 @@
 ﻿
-#include "Map.h"
+//#include "Map.h"
 #include "Print.h"
+#include <string>
+
+void Mapupdate(const int& num);
 
 bool isgameon = true;
 std::string a;

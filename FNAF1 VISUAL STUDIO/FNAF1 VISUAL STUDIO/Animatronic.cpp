@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "Print.h"
 
 class animatronicArray
@@ -17,5 +17,10 @@ public:
 };
 class animatronic
 {
+public:
+	int* stage;
+	animatronic()
+	{
 
+	}
 };
