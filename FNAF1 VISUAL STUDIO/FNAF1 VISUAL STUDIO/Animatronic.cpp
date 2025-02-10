@@ -32,9 +32,9 @@ public:
 class animatronic
 {
 public:
-	int* stagebuffer;
-	int stage;
-	animatronic(std::string name, int stage)
+	//int* stagebuffer;
+	int stage = 0;
+	animatronic(std::string name, int stages)
 	{
 		animatronicStages newstage();
 		stage = newstage().returnarray(0);

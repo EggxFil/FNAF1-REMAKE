@@ -68,7 +68,7 @@ void gameloop()
 {
 	while (isgameon == true)
 	{
-		animatronic Freddy();
+		animatronic Freddy("freddy", 5);
 		Print("what do you want to change?");
 		returnInput(a);
 		Actions(a);
