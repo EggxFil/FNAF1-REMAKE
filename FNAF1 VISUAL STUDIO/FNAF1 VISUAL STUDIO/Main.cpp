@@ -1,8 +1,10 @@
 ﻿
-#include "Map.h"
-#include "Print.h"
+
 #include <string>
+#include "Print.h"
 #include "Animatronic.h"
+#include "Map.h"
+
 
 
 bool isgameon = true;
