@@ -24,7 +24,7 @@ void printMap()
 	std::cout << "             |CAM2B         |CAM4B             " << '\n';
 }
 
-void Mapupdate(const int& num)
+void Mapupdate(const int&& num)
 {
 	if (num == 0)
 	{

@@ -5,7 +5,7 @@
 
 void printMap();
 
-void Mapupdate(const int& num);
+void Mapupdate(const int&& num);
 
 
 	

@@ -8,10 +8,10 @@
 
 
 bool isgameon = true;
-std::string a;
+std::string a = " ";
 
 
-void Actions(std::string action)
+void Actions(std::string& action)
 {
 	if (action == "doors")
 	{
