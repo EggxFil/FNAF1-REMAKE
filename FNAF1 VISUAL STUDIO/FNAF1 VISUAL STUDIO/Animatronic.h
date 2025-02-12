@@ -20,6 +20,10 @@ public:
 			Print(harray[i]);
 		}
 	}
+	int& operator[](const unsigned int& index)
+	{
+		return harray[index];
+	}
 	int returnarray(const int& index)
 	{
 		return harray[index];
@@ -27,31 +31,31 @@ public:
 
 	~animatronicStages()
 	{
-		delete harray;
+		delete[] harray;
 	}
 
 };
 class animatronic
 {
 public:
-	//int* stagebuffer;
+	animatronicStages* newstage = new animatronicStages();
 	int stage = 0;
-	animatronic(std::string name, int stages)
+	animatronic(std::string&& name, const int& stages)
 	{
-		std::unique_ptr<animatronicStages> ptr(new animatronicStages());
-		//animatronicStages* newstage = new animatronicStages();
-		//stage = newstage->returnarray(0);
-		//Print(stage);
-		stage = ptr->returnarray(0);
+	
+		//std::unique_ptr<animatronicStages> ptr(new animatronicStages());
+		
+		stage = newstage->returnarray(0);
+		stage = newstage[0];
+		Print(stage);
+		//stage = ptr->returnarray(0);
 	}
 	void takeStep()
 	{
-		Print(stage);
+		Print("step taken");
 	}
 	~animatronic()
 	{
-		Print(stage);
-		Print("deleted ptr");
-		//delete newstage;
+	    delete[] newstage;
 	}
 };
