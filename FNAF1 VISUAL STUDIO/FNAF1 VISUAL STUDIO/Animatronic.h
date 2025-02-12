@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Print.h"
+#include <memory>
 class animatronicStages
 {
 public:
@@ -37,12 +38,20 @@ public:
 	int stage = 0;
 	animatronic(std::string name, int stages)
 	{
-		animatronicStages* newstage = new animatronicStages();
-		stage = newstage->returnarray(0);
+		std::unique_ptr<animatronicStages> ptr(new animatronicStages());
+		//animatronicStages* newstage = new animatronicStages();
+		//stage = newstage->returnarray(0);
+		//Print(stage);
+		stage = ptr->returnarray(0);
+	}
+	void takeStep()
+	{
 		Print(stage);
 	}
 	~animatronic()
 	{
-		delete newstage;
+		Print(stage);
+		Print("deleted ptr");
+		//delete newstage;
 	}
 };

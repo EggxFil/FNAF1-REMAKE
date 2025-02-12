@@ -71,10 +71,11 @@ void gameloop()
 	while (isgameon == true)
 	{
 		animatronic Freddy("freddy", 5);
+		Freddy.takeStep();
 		Print("what do you want to change?");
 		returnInput(a);
 		Actions(a);
-		
+		isgameon = false;
 	}
 }
 
