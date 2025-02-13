@@ -1,6 +1,7 @@
 #include <string>
 #include "Print.h"
 #include <iostream>
+#include "Animatronic.h"
 
 
 class animatronicStages

@@ -20,7 +20,7 @@ public:
 			Print(harray[i]);
 		}
 	}
-	int& operator[](const unsigned int& index)
+	int& operator[](const unsigned int index)
 	{
 		return harray[index];
 	}
@@ -38,15 +38,13 @@ public:
 class animatronic
 {
 public:
-	animatronicStages* newstage = new animatronicStages();
+	std::unique_ptr<animatronicStages> ptr;
 	int stage = 0;
 	animatronic(std::string&& name, const int& stages)
 	{
-	
-		//std::unique_ptr<animatronicStages> ptr(new animatronicStages());
-		
-		stage = newstage->returnarray(0);
-		stage = newstage[0];
+		ptr = new animatronicStages();
+		stage = ptr->returnarray(0);
+		//stage = ptr[0];
 		Print(stage);
 		//stage = ptr->returnarray(0);
 	}
@@ -56,6 +54,6 @@ public:
 	}
 	~animatronic()
 	{
-	    delete[] newstage;
+	    //delete[] ptr;
 	}
 };
