@@ -20,13 +20,10 @@ public:
 			Print(harray[i]);
 		}
 	}
-	int& operator[](const unsigned int index)
+	int& operator[](const unsigned int& index) const
 	{
 		return harray[index];
-	}
-	int returnarray(const int& index)
-	{
-		return harray[index];
+		//if used with a pointer, dereference
 	}
 
 	~animatronicStages()
@@ -41,19 +38,28 @@ public:
 	std::unique_ptr<animatronicStages> ptr;
 	int stage = 0;
 	animatronic(std::string&& name, const int& stages)
+		:ptr(new animatronicStages())
 	{
-		ptr = new animatronicStages();
-		stage = ptr->returnarray(0);
-		//stage = ptr[0];
+		
+		
+		stage = (*ptr)[0];
 		Print(stage);
-		//stage = ptr->returnarray(0);
+		
 	}
 	void takeStep()
 	{
 		Print("step taken");
+		if (stage != 5)
+		{
+			stage++;
+		}
+		else
+		{
+			isgameon = false;
+		}
+		
 	}
 	~animatronic()
 	{
-	    //delete[] ptr;
 	}
 };
