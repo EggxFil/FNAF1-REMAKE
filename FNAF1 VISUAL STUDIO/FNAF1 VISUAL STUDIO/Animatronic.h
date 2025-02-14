@@ -54,9 +54,13 @@ public:
 		{
 			stage++;
 		}
-		else
+		if (stage == 5)
 		{
 			GameOver();
+		}
+		else
+		{
+			Print("what even happened here?");
 		}
 		
 	}
