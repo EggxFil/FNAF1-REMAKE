@@ -2,6 +2,7 @@
 #include <string>
 #include "Print.h"
 #include <memory>
+#include "Main.h"
 class animatronicStages
 {
 public:
@@ -55,7 +56,7 @@ public:
 		}
 		else
 		{
-			isgameon = false;
+			GameOver();
 		}
 		
 	}

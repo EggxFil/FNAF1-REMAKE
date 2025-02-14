@@ -10,6 +10,10 @@
 bool isgameon = true;
 std::string a = " ";
 
+void GameOver()
+{
+	isgameon = false;
+}
 
 void Actions(std::string& action)
 {
@@ -86,4 +90,5 @@ int main()
 	Mapupdate(0);
 	gameloop();
 }
+
 
