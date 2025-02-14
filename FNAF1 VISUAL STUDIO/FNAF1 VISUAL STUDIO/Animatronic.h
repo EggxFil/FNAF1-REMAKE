@@ -3,6 +3,8 @@
 #include "Print.h"
 #include <memory>
 #include "Main.h"
+#include <cstdlib>
+#include <ctime>
 class animatronicStages
 {
 public:
@@ -20,6 +22,7 @@ public:
 			harray[i] = arraybuffer;
 			Print(harray[i]);
 		}
+		
 	}
 	int& operator[](const unsigned int& index) const
 	{
@@ -36,23 +39,45 @@ public:
 class animatronic
 {
 public:
-	std::unique_ptr<animatronicStages> ptr;
+
+	int randomNum = 2;
+	
 	int stage = 0;
-	animatronic(std::string&& name, const int& stages)
-		:ptr(new animatronicStages())
+	int* arrayPointer;
+	animatronicStages obj;
+	animatronic(std::string&& name)
 	{
 		
+		arrayPointer = obj.harray;
 		
-		stage = (*ptr)[0];
-		Print(stage);
+		Print(*arrayPointer);
+		
+		
 		
 	}
+
+	void RandStep()
+	{
+		srand(time(0));
+		randomNum = rand() % 2;
+		if(randomNum == 0)
+		{
+			takeStep();
+		}
+		else if (randomNum == 1)
+		{
+			Print("step not taken");
+		}
+	}
+
 	void takeStep()
 	{
 		Print("step taken");
 		if (stage != 5)
 		{
-			stage++;
+			*arrayPointer = 1;
+
+			
 		}
 		if (stage == 5)
 		{
@@ -64,6 +89,7 @@ public:
 		}
 		
 	}
+
 	~animatronic()
 	{
 	}

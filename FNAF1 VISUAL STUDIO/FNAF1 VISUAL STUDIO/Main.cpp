@@ -67,19 +67,24 @@ void Actions(std::string& action)
 		}
 		
 	}
+	else if (action == "cameras")
+	{
+		Print("Which camera? (Reference the map for camera names");
+		returnInput(action);
+	}
 	
 	
 }
 void gameloop()
 {
+	animatronic Freddy("freddy");
 	while (isgameon == true)
 	{
-		animatronic Freddy("freddy", 5);
-		Freddy.takeStep();
-		Print("what do you want to change?");
+		
+		Freddy.RandStep();
+		Print("What do you want to interact with?");
 		returnInput(a);
 		Actions(a);
-		isgameon = false;
 	}
 }
 
