@@ -22,7 +22,7 @@ public:
 			harray[i] = arraybuffer;
 			Print(harray[i]);
 		}
-		
+	
 	}
 	int& operator[](const unsigned int& index) const
 	{
@@ -42,13 +42,13 @@ public:
 
 	int randomNum = 2;
 	
-	int stage = 0;
-	int* arrayPointer;
+	int* arrayPointer = nullptr;
 	animatronicStages obj;
+
 	animatronic(std::string&& name)
+		:arrayPointer(obj.harray)
 	{
 		
-		arrayPointer = obj.harray;
 		
 		Print(*arrayPointer);
 		
@@ -73,13 +73,13 @@ public:
 	void takeStep()
 	{
 		Print("step taken");
-		if (stage != 5)
+		if (*arrayPointer != 5)
 		{
-			*arrayPointer = 1;
-
+			*arrayPointer++;
+			Print(*arrayPointer);
 			
 		}
-		if (stage == 5)
+		if (*arrayPointer == 5)
 		{
 			GameOver();
 		}
