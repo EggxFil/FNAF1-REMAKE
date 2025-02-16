@@ -36,6 +36,7 @@ public:
 	}
 
 };
+
 class animatronic
 {
 public:
@@ -46,9 +47,9 @@ public:
 	animatronicStages obj;
 
 	animatronic(std::string&& name)
-		:arrayPointer(obj.harray)
 	{
 		
+		arrayPointer = obj.harray;
 		
 		Print(*arrayPointer);
 		
@@ -75,11 +76,11 @@ public:
 		Print("step taken");
 		if (*arrayPointer != 5)
 		{
-			*arrayPointer++;
+			(*arrayPointer)++;
 			Print(*arrayPointer);
 			
 		}
-		if (*arrayPointer == 5)
+		else if (*arrayPointer == 5)
 		{
 			GameOver();
 		}
@@ -88,6 +89,17 @@ public:
 			Print("what even happened here?");
 		}
 		
+	}
+	int CheckStage(int stage)
+	{
+		if (*arrayPointer == stage)
+		{
+			Print("an animatronic is here");
+		}
+		else
+		{
+			Print("No one's here.");
+		}
 	}
 
 	~animatronic()

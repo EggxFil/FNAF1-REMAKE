@@ -12,6 +12,7 @@ std::string a = " ";
 
 void GameOver()
 {
+	Print("GameOver :(");
 	isgameon = false;
 }
 
@@ -71,16 +72,21 @@ void Actions(std::string& action)
 	{
 		Print("Which camera? (Reference the map for camera names");
 		returnInput(action);
+		if (action == "CAM1A")
+		{
+			
+		}
 	}
 	
 	
 }
 void gameloop()
 {
-	animatronic Freddy("freddy");
+	animatronic Foxy("Foxy");
+	animatronic Freddy("Freddy");
 	while (isgameon == true)
 	{
-		
+		Foxy.RandStep();
 		Freddy.RandStep();
 		Print("What do you want to interact with?");
 		returnInput(a);
