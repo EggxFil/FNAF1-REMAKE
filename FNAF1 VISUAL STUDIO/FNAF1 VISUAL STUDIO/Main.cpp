@@ -10,6 +10,11 @@
 bool isgameon = true;
 std::string a = " ";
 
+animatronic Foxy("Foxy");
+animatronic Freddy("Freddy");
+
+
+
 void GameOver()
 {
 	Print("GameOver :(");
@@ -74,16 +79,21 @@ void Actions(std::string& action)
 		returnInput(action);
 		if (action == "CAM1A")
 		{
-			
+			Freddy.CheckStage(2);
+			Foxy.CheckStage(1);
+		}
+		else if (action == "CAM1B")
+		{
+			Freddy.CheckStage(2);
 		}
 	}
 	
 	
 }
+
 void gameloop()
 {
-	animatronic Foxy("Foxy");
-	animatronic Freddy("Freddy");
+
 	while (isgameon == true)
 	{
 		Foxy.RandStep();
@@ -93,7 +103,6 @@ void gameloop()
 		Actions(a);
 	}
 }
-
 
 
 int main()

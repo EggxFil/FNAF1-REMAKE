@@ -14,7 +14,7 @@ public:
 	animatronicStages()
 	{
 
-		harray = new int[5];
+		harray = new int[6];
 
 		for (int i = 0; 5 > i; i++)
 		{
@@ -50,6 +50,7 @@ public:
 	{
 		
 		arrayPointer = obj.harray;
+		(*arrayPointer)++;
 		
 		Print(*arrayPointer);
 		
@@ -74,13 +75,13 @@ public:
 	void takeStep()
 	{
 		Print("step taken");
-		if (*arrayPointer != 5)
+		if (*arrayPointer != 6)
 		{
 			(*arrayPointer)++;
 			Print(*arrayPointer);
 			
 		}
-		else if (*arrayPointer == 5)
+		else if (*arrayPointer == 6)
 		{
 			GameOver();
 		}
@@ -90,11 +91,23 @@ public:
 		}
 		
 	}
-	int CheckStage(int stage)
+	void CheckStage(int stage)
 	{
+		/*
+		1 = foxys cove
+		2 = stage
+		3 = main hall
+		4 = left and right hallways
+		5 = right next to door
+		6 = dead
+		 */
 		if (*arrayPointer == stage)
 		{
-			Print("an animatronic is here");
+			Print("An animatronic is here");
+		}
+		else if (*arrayPointer == 5)
+		{
+			Print("An animatronic is right outside your door");
 		}
 		else
 		{
