@@ -5,16 +5,21 @@
 #include "Main.h"
 #include <cstdlib>
 #include <ctime>
+
 class animatronicStages
 {
+	const int m = 2;
+	const int n = 5;
+	
 public:
 	int* harray = nullptr;
 	int arraybuffer = 0;
 
 	animatronicStages()
+		
 	{
 
-		harray = new int[6];
+		harray = new int[2 * 5];
 
 		for (int i = 0; 5 > i; i++)
 		{
@@ -93,14 +98,9 @@ public:
 	}
 	void CheckStage(int stage)
 	{
-		/*
-		1 = foxys cove
-		2 = stage
-		3 = main hall
-		4 = left and right hallways
-		5 = right next to door
-		6 = dead
-		 */
+		
+	/*  1) 1 = stage, 2 = main hall,   3 = left hallway, 4 = next to left door, 5 = dead
+		2) 1 = 0,     2 = foxies cove, 3 = right hallway,4 = next to right door,5 = dead*/
 		if (*arrayPointer == stage)
 		{
 			Print("An animatronic is here");
