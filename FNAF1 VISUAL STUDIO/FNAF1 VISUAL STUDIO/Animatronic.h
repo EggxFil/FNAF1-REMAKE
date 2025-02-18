@@ -10,31 +10,31 @@ class animatronicStages
 {
 	
 public:
-	int harray[2][5];
+	int harray[5];
+	int Rarray[4];
 	int arraybuffer = 0;
 
 	animatronicStages()
-
 	{
-
 		
-		for (int j = 0; 2 > j; j++)
+		
+		for (int i = 0; 5 > i; i++)
 		{
-			for (int i = 0; 5 > i; i++)
-			{
-				arraybuffer++;
-				harray[0][i] = arraybuffer;
-				Print(harray[i]);
-			}
+			arraybuffer++;
+			harray[i] = arraybuffer;
+			Print(harray[i]);
+			
+		}
+		arraybuffer = 0;
+		for (int i = 0; 4 > i; i++)
+		{
+			arraybuffer++;
+			Rarray[i] = arraybuffer;
+			Print(Rarray[i]);
 		}
 		
+	}
 	
-	}
-	int& operator[](const unsigned int& index) const
-	{
-		return harray[index];
-		//if used with a pointer, dereference
-	}
 
 	~animatronicStages()
 	{
@@ -49,14 +49,15 @@ public:
 
 	int randomNum = 2;
 	
-	int* arrayPointer = nullptr;
+	//int* arrayPointer = nullptr;
 	animatronicStages obj;
+	std::unique_ptr<int> arrayPointer;
 
 	animatronic(std::string&& name)
+		:arrayPointer(obj.harray)
 	{
 		
-		arrayPointer = obj.harray[0][0];
-		(*arrayPointer)++;
+		//arrayPointer(obj.harray);
 		
 		Print(*arrayPointer);
 		
@@ -81,13 +82,13 @@ public:
 	void takeStep()
 	{
 		Print("step taken");
-		if (*arrayPointer != 6)
+		if (*arrayPointer != 5)
 		{
 			(*arrayPointer)++;
 			Print(*arrayPointer);
 			
 		}
-		else if (*arrayPointer == 6)
+		else if (*arrayPointer == 5)
 		{
 			GameOver();
 		}

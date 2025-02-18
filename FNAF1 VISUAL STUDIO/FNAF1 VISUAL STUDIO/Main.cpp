@@ -80,7 +80,7 @@ void Actions(std::string& action)
 		if (action == "CAM1A")
 		{
 			Freddy.CheckStage(2);
-			Foxy.CheckStage(1);
+			//Foxy.CheckStage(1);
 		}
 		else if (action == "CAM1B")
 		{
@@ -96,7 +96,7 @@ void gameloop()
 
 	while (isgameon == true)
 	{
-		Foxy.RandStep();
+		//Foxy.RandStep();
 		Freddy.RandStep();
 		Print("What do you want to interact with?");
 		returnInput(a);
