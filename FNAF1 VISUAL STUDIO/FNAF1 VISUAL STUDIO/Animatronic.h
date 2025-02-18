@@ -8,25 +8,26 @@
 
 class animatronicStages
 {
-	const int m = 2;
-	const int n = 5;
 	
 public:
-	int* harray = nullptr;
+	int harray[2][5];
 	int arraybuffer = 0;
 
 	animatronicStages()
-		
+
 	{
 
-		harray = new int[2 * 5];
-
-		for (int i = 0; 5 > i; i++)
+		
+		for (int j = 0; 2 > j; j++)
 		{
-			arraybuffer++;
-			harray[i] = arraybuffer;
-			Print(harray[i]);
+			for (int i = 0; 5 > i; i++)
+			{
+				arraybuffer++;
+				harray[0][i] = arraybuffer;
+				Print(harray[i]);
+			}
 		}
+		
 	
 	}
 	int& operator[](const unsigned int& index) const
@@ -54,7 +55,7 @@ public:
 	animatronic(std::string&& name)
 	{
 		
-		arrayPointer = obj.harray;
+		arrayPointer = obj.harray[0][0];
 		(*arrayPointer)++;
 		
 		Print(*arrayPointer);
