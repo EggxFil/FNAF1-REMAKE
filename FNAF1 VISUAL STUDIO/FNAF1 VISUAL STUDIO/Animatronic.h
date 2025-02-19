@@ -11,7 +11,7 @@ class animatronicStages
 	
 public:
 	int harray[5];
-	int Rarray[4];
+	int Larray[4];
 	int arraybuffer = 0;
 
 	animatronicStages()
@@ -29,10 +29,15 @@ public:
 		for (int i = 0; 4 > i; i++)
 		{
 			arraybuffer++;
-			Rarray[i] = arraybuffer;
-			Print(Rarray[i]);
+			Larray[i] = arraybuffer;
+			Print(Larray[i]);
 		}
 		
+		
+	}
+	animatronicStages(const animatronicStages& other)
+	{
+
 	}
 	
 
@@ -45,8 +50,9 @@ public:
 
 class animatronic
 {
+	std::string m_name;
 public:
-
+	
 	int randomNum = 2;
 	
 	//int* arrayPointer = nullptr;
@@ -54,7 +60,7 @@ public:
 	std::unique_ptr<int> arrayPointer;
 
 	animatronic(std::string&& name)
-		:arrayPointer(obj.harray)
+		:arrayPointer(obj.harray),m_name(name)
 	{
 		
 		//arrayPointer(obj.harray);
@@ -71,7 +77,7 @@ public:
 		randomNum = rand() % 2;
 		if(randomNum == 0)
 		{
-			takeStep();
+			takeStep(m_name);
 		}
 		else if (randomNum == 1)
 		{
@@ -79,8 +85,9 @@ public:
 		}
 	}
 
-	void takeStep()
+	void takeStep(const std::string& Name)
 	{
+		if(Name == "Freddy" || Name == )
 		Print("step taken");
 		if (*arrayPointer != 5)
 		{
