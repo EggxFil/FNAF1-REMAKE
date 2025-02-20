@@ -1,2 +1,2 @@
 #pragma once
-void GameOver();
+void GameOver(const int& hall);

@@ -113,6 +113,25 @@ void Actions(std::string& action)
 			Freddy.CheckStage(1, 5);
 			Chika.CheckStage(1, 5);
 		}
+		else if (action == "CAM2A")
+		{
+			Bonnie.CheckStage(2, 3);
+			Foxy.CheckStage(2, 3);
+		}
+		else if (action == "CAM2B")
+		{
+			Bonnie.CheckStage(2, 4);
+			Foxy.CheckStage(2, 4);
+		}
+		else if (action == "left")
+		{
+			Bonnie.CheckStage(2, 5);
+			Foxy.CheckStage(2, 5);
+		}
+		else
+		{
+			Print("Spelling error");
+		}
 	}
 	
 	

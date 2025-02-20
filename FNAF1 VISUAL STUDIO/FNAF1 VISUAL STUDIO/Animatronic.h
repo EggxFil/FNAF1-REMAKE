@@ -11,7 +11,7 @@ class animatronicStages
 	int arraybuffer = 0;
 public:
 	int Rarray[5];
-	int Larray[4];
+	int Larray[5];
 	
 
 	animatronicStages()
@@ -26,7 +26,7 @@ public:
 			
 		}
 		arraybuffer = 0;
-		for (int i = 0; 4 > i; i++)
+		for (int i = 0; 5 > i; i++)
 		{
 			arraybuffer++;
 			Larray[i] = arraybuffer;
