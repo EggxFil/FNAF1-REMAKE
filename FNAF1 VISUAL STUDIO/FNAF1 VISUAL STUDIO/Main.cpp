@@ -12,11 +12,14 @@ std::string a = " ";
 
 animatronic Foxy("Foxy");
 animatronic Freddy("Freddy");
+animatronic Bonnie("Bonnie");
+animatronic Chika("Chika");
 
 
 
-void GameOver()
+void GameOver(const int& hall)
 {
+
 	Print("GameOver :(");
 	isgameon = false;
 }
@@ -75,17 +78,40 @@ void Actions(std::string& action)
 	}
 	else if (action == "cameras")
 	{
-		Print("Which camera? (Reference the map for camera names");
+		Print("Which camera? (Reference the map for camera names or type left/right to look out the doors)");
 		returnInput(action);
 		if (action == "CAM1A")
 		{
 			Freddy.CheckStage(1,1);
+			Chika.CheckStage(1, 1);
+			Bonnie.CheckStage(1, 1);
+		}
+		else if (action == "CAM1C")
+		{
+			Foxy.CheckStage(2,1);
 			
 		}
 		else if (action == "CAM1B")
 		{
-			Freddy.CheckStage(2,1);
-
+			Freddy.CheckStage(1, 2);
+			Chika.CheckStage(1, 2);
+			Bonnie.CheckStage(2, 2);
+			Foxy.CheckStage(2, 2);
+		}
+		else if (action == "CAM4A")
+		{
+			Freddy.CheckStage(1, 3);
+			Chika.CheckStage(1, 3);
+		}
+		else if (action == "CAM4B")
+		{
+			Freddy.CheckStage(1, 4);
+			Chika.CheckStage(1, 4);
+		}
+		else if (action == "right")
+		{
+			Freddy.CheckStage(1, 5);
+			Chika.CheckStage(1, 5);
 		}
 	}
 	
@@ -94,14 +120,16 @@ void Actions(std::string& action)
 
 void gameloop()
 {
-
 	while (isgameon == true)
 	{
-		//Foxy.RandStep();
-		Freddy.RandStep();
 		Print("What do you want to interact with?");
 		returnInput(a);
 		Actions(a);
+		Foxy.RandStep();
+		Freddy.RandStep();
+		Bonnie.RandStep();
+		Chika.RandStep();
+		
 	}
 }
 

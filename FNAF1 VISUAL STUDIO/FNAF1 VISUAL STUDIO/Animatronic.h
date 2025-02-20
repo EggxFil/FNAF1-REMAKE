@@ -22,7 +22,7 @@ public:
 		{
 			arraybuffer++;
 			Rarray[i] = arraybuffer;
-			Print(Rarray[i]);
+			
 			
 		}
 		arraybuffer = 0;
@@ -30,7 +30,7 @@ public:
 		{
 			arraybuffer++;
 			Larray[i] = arraybuffer;
-			Print(Larray[i]);
+			
 		}
 		
 		
@@ -52,12 +52,6 @@ public:
 	animatronic(std::string&& name)
 		:RightHall(obj.Rarray),LeftHall(obj.Larray), m_name(name)
 	{
-		
-		//arrayPointer(obj.harray);
-		
-		Print(*RightHall);
-		
-		
 		
 	}
 
@@ -88,7 +82,25 @@ public:
 			}
 			else if (*RightHall == 5)
 			{
-				GameOver();
+				GameOver(1);
+			}
+			else
+			{
+				Print("what even happened here?");
+			}
+		}
+		else if (Name == "Bonnie" || Name == "Foxy")
+		{
+			Print("step taken");
+			if (*LeftHall != 5)
+			{
+				(*LeftHall)++;
+				Print(*LeftHall);
+
+			}
+			else if (*LeftHall == 5)
+			{
+				GameOver(2);
 			}
 			else
 			{
@@ -136,7 +148,4 @@ public:
 		}
 	}
 
-	~animatronic()
-	{
-	}
 };
