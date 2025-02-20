@@ -8,11 +8,11 @@
 
 class animatronicStages
 {
-	
-public:
-	int harray[5];
-	int Larray[4];
 	int arraybuffer = 0;
+public:
+	int Rarray[5];
+	int Larray[4];
+	
 
 	animatronicStages()
 	{
@@ -21,8 +21,8 @@ public:
 		for (int i = 0; 5 > i; i++)
 		{
 			arraybuffer++;
-			harray[i] = arraybuffer;
-			Print(harray[i]);
+			Rarray[i] = arraybuffer;
+			Print(Rarray[i]);
 			
 		}
 		arraybuffer = 0;
@@ -35,17 +35,6 @@ public:
 		
 		
 	}
-	animatronicStages(const animatronicStages& other)
-	{
-
-	}
-	
-
-	~animatronicStages()
-	{
-		delete[] harray;
-	}
-
 };
 
 class animatronic
@@ -57,15 +46,16 @@ public:
 	
 	//int* arrayPointer = nullptr;
 	animatronicStages obj;
-	std::unique_ptr<int> arrayPointer;
+	std::unique_ptr<int> RightHall;
+	std::unique_ptr<int> LeftHall;
 
 	animatronic(std::string&& name)
-		:arrayPointer(obj.harray),m_name(name)
+		:RightHall(obj.Rarray),LeftHall(obj.Larray), m_name(name)
 	{
 		
 		//arrayPointer(obj.harray);
 		
-		Print(*arrayPointer);
+		Print(*RightHall);
 		
 		
 		
@@ -87,40 +77,62 @@ public:
 
 	void takeStep(const std::string& Name)
 	{
-		if(Name == "Freddy" || Name == )
-		Print("step taken");
-		if (*arrayPointer != 5)
+		if (Name == "Freddy" || Name == "Chika")
 		{
-			(*arrayPointer)++;
-			Print(*arrayPointer);
-			
+			Print("step taken");
+			if (*RightHall != 5)
+			{
+				(*RightHall)++;
+				Print(*RightHall);
+
+			}
+			else if (*RightHall == 5)
+			{
+				GameOver();
+			}
+			else
+			{
+				Print("what even happened here?");
+			}
 		}
-		else if (*arrayPointer == 5)
-		{
-			GameOver();
-		}
-		else
-		{
-			Print("what even happened here?");
-		}
+		
 		
 	}
-	void CheckStage(int stage)
+	void CheckStage(const int& stage, const int& hall)
 	{
 		
-	/*  1) 1 = stage, 2 = main hall,   3 = left hallway, 4 = next to left door, 5 = dead
-		2) 1 = 0,     2 = foxies cove, 3 = right hallway,4 = next to right door,5 = dead*/
-		if (*arrayPointer == stage)
+	/*  hall 1) 1 = stage, 2 = main hall,   3 = left hallway, 4 = next to left door, 5 = dead
+		hall 2) 1 = 0,     2 = foxies cove, 3 = right hallway,4 = next to right door,5 = dead
+	*/
+		if (hall == 1)
 		{
-			Print("An animatronic is here");
+			if (*RightHall == stage)
+			{
+				Print("An animatronic is here");
+			}
+			else if (*RightHall == 5)
+			{
+				Print("An animatronic is right outside your door");
+			}
+			else
+			{
+				Print("No one's here.");
+			}
 		}
-		else if (*arrayPointer == 5)
+		else if (hall == 2)
 		{
-			Print("An animatronic is right outside your door");
-		}
-		else
-		{
-			Print("No one's here.");
+			if (*LeftHall == stage)
+			{
+				Print("An animatronic is here");
+			}
+			else if (*LeftHall == 4)
+			{
+				Print("An animatronic is right outside your door");
+			}
+			else
+			{
+				Print("No one's here.");
+			}
 		}
 	}
 

@@ -79,12 +79,13 @@ void Actions(std::string& action)
 		returnInput(action);
 		if (action == "CAM1A")
 		{
-			Freddy.CheckStage(2);
-			//Foxy.CheckStage(1);
+			Freddy.CheckStage(1,1);
+			
 		}
 		else if (action == "CAM1B")
 		{
-			Freddy.CheckStage(2);
+			Freddy.CheckStage(2,1);
+
 		}
 	}
 	
