@@ -16,7 +16,6 @@ animatronic Bonnie("Bonnie");
 animatronic Chika("Chika");
 
 
-
 void GameOver(const int& hall)
 {
 
@@ -76,6 +75,8 @@ void Actions(std::string& action)
 		}
 		
 	}
+	
+
 	else if (action == "cameras")
 	{
 		Print("Which camera? (Reference the map for camera names or type left/right to look out the doors)");
