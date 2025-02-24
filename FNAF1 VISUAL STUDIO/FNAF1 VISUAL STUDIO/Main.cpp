@@ -14,7 +14,16 @@ animatronic Foxy("Foxy");
 animatronic Freddy("Freddy");
 animatronic Bonnie("Bonnie");
 animatronic Chika("Chika");
-
+enum cameras 
+{
+ CAM1,
+ CAM2,
+ CAM3,
+ CAM4,
+ CAM5,
+ CAM6,
+ CAM7
+};
 
 void GameOver(const int& hall)
 {
@@ -79,9 +88,11 @@ void Actions(std::string& action)
 
 	else if (action == "cameras")
 	{
-		Print("Which camera? (Reference the map for camera names or type left/right to look out the doors)");
-		returnInput(action);
-		if (action == "CAM1A")
+		int newAction;
+		Print("Which camera? (example: type 4 to select CAM4)");
+		returnInput(newAction);
+		switch (cameras);
+		if (newAction == 1)
 		{
 			Freddy.CheckStage(1,1);
 			Chika.CheckStage(1, 1);

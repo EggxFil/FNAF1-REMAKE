@@ -10,3 +10,5 @@ void Print(const int& text);
 void Print(const int* text);
 
 std::string returnInput(std::string& text);
+
+int returnInput(int& text);

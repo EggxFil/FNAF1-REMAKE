@@ -21,3 +21,8 @@ std::string returnInput(std::string& text)
 	std::cin >> text;
 	return text;
 }
+int returnInput(int& text)
+{
+	std::cin >> text;
+	return text;
+}
