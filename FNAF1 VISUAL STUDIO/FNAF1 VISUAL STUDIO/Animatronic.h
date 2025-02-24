@@ -57,7 +57,7 @@ public:
 
 	void RandStep()
 	{
-		srand(time(0));
+		
 		randomNum = rand() % 2;
 		if(randomNum == 0)
 		{
@@ -82,7 +82,8 @@ public:
 			}
 			else if (*RightHall == 5)
 			{
-				GameOver(1);
+				
+				GameOver(1, this);
 			}
 			else
 			{
@@ -100,7 +101,7 @@ public:
 			}
 			else if (*LeftHall == 5)
 			{
-				GameOver(2);
+				GameOver(2, this);
 			}
 			else
 			{
@@ -114,7 +115,7 @@ public:
 	{
 		
 	/*  hall 1) 1 = stage, 2 = main hall,   3 = left hallway, 4 = next to left door, 5 = dead
-		hall 2) 1 = 0,     2 = foxies cove, 3 = right hallway,4 = next to right door,5 = dead
+		hall 2) 1 = stage, 2 = foxies cove, 3 = right hallway,4 = next to right door,5 = dead
 	*/
 		if (hall == 1)
 		{

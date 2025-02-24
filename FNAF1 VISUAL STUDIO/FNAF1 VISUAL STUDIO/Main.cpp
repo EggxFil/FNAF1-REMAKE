@@ -9,11 +9,14 @@
 
 bool isgameon = true;
 std::string a = " ";
+bool Ldoorclosed = false;
+bool Rdoorclosed = false;
 
 animatronic Foxy("Foxy");
 animatronic Freddy("Freddy");
 animatronic Bonnie("Bonnie");
 animatronic Chika("Chika");
+
 enum cameras 
 {
  CAM1,
@@ -26,11 +29,24 @@ enum cameras
 };
 
 
-void GameOver(const int& hall)
+void GameOver(const int& hall, const animatronic& caller)
 {
+	if (hall == 1 || Rdoorclosed == false)
+	{
+		Print("GameOver :(");
+		isgameon = false;
+	}
+	else if (hall == 2 || Ldoorclosed == false)
+	{
+		Print("GameOver :(");
+		isgameon = false;
+	}
+	else if (Ldoorclosed == true)
+	{
 
-	Print("GameOver :(");
-	isgameon = false;
+	}
+	
+	
 }
 
 void Actions(std::string& action)
@@ -103,29 +119,29 @@ void Actions(std::string& action)
 			Bonnie.CheckStage(1, 1);
 			break;
 		case 2:
-			Freddy.CheckStage(1, 2);
-			Chika.CheckStage(1, 2);
+			Freddy.CheckStage(2, 1);
+			Chika.CheckStage(2, 1);
 			Bonnie.CheckStage(2, 2);
 			Foxy.CheckStage(2, 2);
 			break;
 		case 3:
-			Foxy.CheckStage(2, 1);
+			Foxy.CheckStage(1, 2);
 			break;
 		case 4:
-			Foxy.CheckStage(2, 3);
-			Bonnie.CheckStage(2, 3);
+			Foxy.CheckStage(3, 2);
+			Bonnie.CheckStage(3, 2);
 			break;
 		case 5:
-			Foxy.CheckStage(2, 4);
-			Bonnie.CheckStage(2, 4);
+			Foxy.CheckStage(4, 2);
+			Bonnie.CheckStage(4, 2);
 			break;
 		case 6:
-			Freddy.CheckStage(1, 3);
-			Chika.CheckStage(1, 3);
+			Freddy.CheckStage(3, 1);
+			Chika.CheckStage(3, 1);
 			break;
 		case 7:
-			Freddy.CheckStage(1, 4);
-			Chika.CheckStage(1, 4);
+			Freddy.CheckStage(4, 1);
+			Chika.CheckStage(4, 1);
 		}
 			
 		
@@ -154,6 +170,7 @@ void gameloop()
 
 int main()
 {
+	srand(time(0));
 	Mapupdate(0);
 	gameloop();
 }
