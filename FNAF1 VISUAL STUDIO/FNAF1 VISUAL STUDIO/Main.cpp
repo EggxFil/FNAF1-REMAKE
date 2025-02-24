@@ -93,6 +93,8 @@ void Actions(std::string& action)
 		Print("Which camera? (example: type 4 to select CAM4)");
 		returnInput(newAction);
 		cameras myCams = static_cast<cameras>(newAction);
+
+
 		switch (myCams)
 		{
 		case 1:
@@ -101,59 +103,34 @@ void Actions(std::string& action)
 			Bonnie.CheckStage(1, 1);
 			break;
 		case 2:
-			Foxy.CheckStage(2, 1);
-			break;
-		case 3:
 			Freddy.CheckStage(1, 2);
 			Chika.CheckStage(1, 2);
 			Bonnie.CheckStage(2, 2);
 			Foxy.CheckStage(2, 2);
 			break;
+		case 3:
+			Foxy.CheckStage(2, 1);
+			break;
+		case 4:
+			Foxy.CheckStage(2, 3);
+			Bonnie.CheckStage(2, 3);
+			break;
+		case 5:
+			Foxy.CheckStage(2, 4);
+			Bonnie.CheckStage(2, 4);
+			break;
+		case 6:
+			Freddy.CheckStage(1, 3);
+			Chika.CheckStage(1, 3);
+			break;
+		case 7:
+			Freddy.CheckStage(1, 4);
+			Chika.CheckStage(1, 4);
 		}
 			
 		
 		
-		else if (action == "CAM1B")
-		{
-			Freddy.CheckStage(1, 2);
-			Chika.CheckStage(1, 2);
-			Bonnie.CheckStage(2, 2);
-			Foxy.CheckStage(2, 2);
-		}
-		else if (action == "CAM4A")
-		{
-			Freddy.CheckStage(1, 3);
-			Chika.CheckStage(1, 3);
-		}
-		else if (action == "CAM4B")
-		{
-			Freddy.CheckStage(1, 4);
-			Chika.CheckStage(1, 4);
-		}
-		else if (action == "right")
-		{
-			Freddy.CheckStage(1, 5);
-			Chika.CheckStage(1, 5);
-		}
-		else if (action == "CAM2A")
-		{
-			Bonnie.CheckStage(2, 3);
-			Foxy.CheckStage(2, 3);
-		}
-		else if (action == "CAM2B")
-		{
-			Bonnie.CheckStage(2, 4);
-			Foxy.CheckStage(2, 4);
-		}
-		else if (action == "left")
-		{
-			Bonnie.CheckStage(2, 5);
-			Foxy.CheckStage(2, 5);
-		}
-		else
-		{
-			Print("Spelling error");
-		}
+		
 	}
 	
 	

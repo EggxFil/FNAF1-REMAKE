@@ -126,7 +126,7 @@ public:
 			{
 				Print("An animatronic is right outside your door");
 			}
-			else
+			else if (*RightHall != stage)
 			{
 				Print("No one's here.");
 			}
@@ -137,11 +137,11 @@ public:
 			{
 				Print("An animatronic is here");
 			}
-			else if (*LeftHall == 4)
+			else if (*LeftHall == 5)
 			{
 				Print("An animatronic is right outside your door");
 			}
-			else
+			else if(*LeftHall != stage)
 			{
 				Print("No one's here.");
 			}
