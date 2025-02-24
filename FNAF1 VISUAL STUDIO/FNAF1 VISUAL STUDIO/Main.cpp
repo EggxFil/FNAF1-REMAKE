@@ -25,6 +25,7 @@ enum cameras
  CAM7
 };
 
+
 void GameOver(const int& hall)
 {
 
@@ -91,18 +92,27 @@ void Actions(std::string& action)
 		int newAction;
 		Print("Which camera? (example: type 4 to select CAM4)");
 		returnInput(newAction);
-		switch (cameras);
-		if (newAction == 1)
+		cameras myCams = static_cast<cameras>(newAction);
+		switch (myCams)
 		{
-			Freddy.CheckStage(1,1);
+		case 1:
+			Freddy.CheckStage(1, 1);
 			Chika.CheckStage(1, 1);
 			Bonnie.CheckStage(1, 1);
+			break;
+		case 2:
+			Foxy.CheckStage(2, 1);
+			break;
+		case 3:
+			Freddy.CheckStage(1, 2);
+			Chika.CheckStage(1, 2);
+			Bonnie.CheckStage(2, 2);
+			Foxy.CheckStage(2, 2);
+			break;
 		}
-		else if (action == "CAM1C")
-		{
-			Foxy.CheckStage(2,1);
 			
-		}
+		
+		
 		else if (action == "CAM1B")
 		{
 			Freddy.CheckStage(1, 2);
