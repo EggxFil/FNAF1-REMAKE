@@ -1,6 +1,7 @@
 #include <iostream>
 
-
+bool Ldoorclosed = false;
+bool Rdoorclosed = false;
 std::string leftdoor = "   ";
 std::string rightdoor = "   ";
 void printMap()
@@ -31,26 +32,32 @@ void Mapupdate(const int&& num)
 		leftdoor = "   ";
 		rightdoor = "   ";
 		printMap();
+		Ldoorclosed = false;
+		Rdoorclosed = false;
 	}
 
 	else if (num == 1)
 	{
 		leftdoor = "|||";
 		printMap();
+		Ldoorclosed = true;
 	}
 	else if (num == 2)
 	{
 		rightdoor = "|||";
 		printMap();
+		Rdoorclosed = true;
 	}
 	else if (num == 3)
 	{
 		leftdoor = "   ";
 		printMap();
+		Ldoorclosed = false;
 	}
 	else if (num == 4)
 	{
 		rightdoor = "   ";
 		printMap();
+		Rdoorclosed = false;
 	}
 }

@@ -9,8 +9,7 @@
 
 bool isgameon = true;
 std::string a = " ";
-bool Ldoorclosed = false;
-bool Rdoorclosed = false;
+
 
 animatronic Foxy("Foxy");
 animatronic Freddy("Freddy");
@@ -29,7 +28,7 @@ enum cameras
 };
 
 
-void GameOver(const int& hall, const animatronic& caller)
+void GameOver(const int& hall, const animatronic* caller)
 {
 	if (hall == 1 || Rdoorclosed == false)
 	{
@@ -43,7 +42,19 @@ void GameOver(const int& hall, const animatronic& caller)
 	}
 	else if (Ldoorclosed == true)
 	{
-		caller.LeftHall(caller.obj.Larray[0]);
+		while (caller->RightHall != 0)
+		{
+			caller->RightHall--;
+		}
+		Print("pointer reset");
+	}
+	else if (Rdoorclosed == true)
+	{
+		while (caller->LeftHall != 0)
+		{
+			(caller->LeftHall)--;
+		}
+		Print("pointer reset");
 	}
 	
 	
