@@ -43,7 +43,7 @@ void GameOver(const int& hall, const animatronic& caller)
 	}
 	else if (Ldoorclosed == true)
 	{
-
+		caller.LeftHall(caller.obj.Larray[0]);
 	}
 	
 	
