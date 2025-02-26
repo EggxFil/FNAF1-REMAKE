@@ -46,8 +46,8 @@ public:
 	
 	//int* arrayPointer = nullptr;
 	animatronicStages obj;
-	std::unique_ptr<int> RightHall;
-	std::unique_ptr<int> LeftHall;
+	int* RightHall;
+	int* LeftHall;
 
 	animatronic(std::string&& name)
 		:RightHall(obj.Rarray),LeftHall(obj.Larray), m_name(name)
@@ -94,7 +94,7 @@ public:
 			Print("step taken");
 			if (*LeftHall != 5)
 			{
-				(*LeftHall)++;
+				LeftHall++;
 				Print(*LeftHall);
 
 			}

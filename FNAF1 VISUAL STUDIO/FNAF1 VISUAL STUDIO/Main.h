@@ -1,2 +1,2 @@
 #pragma once
-void GameOver(const int& hall, const animatronic& caller);
+void GameOver(const int& hall, animatronic* caller);

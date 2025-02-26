@@ -28,7 +28,7 @@ enum cameras
 };
 
 
-void GameOver(const int& hall, const animatronic* caller)
+void GameOver(const int& hall, animatronic* caller)
 {
 	if (hall == 1 || Rdoorclosed == false)
 	{
@@ -52,7 +52,7 @@ void GameOver(const int& hall, const animatronic* caller)
 	{
 		while (caller->LeftHall != 0)
 		{
-			(caller->LeftHall)--;
+			caller->LeftHall--;
 		}
 		Print("pointer reset");
 	}
