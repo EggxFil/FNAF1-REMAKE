@@ -110,6 +110,7 @@ public:
 		
 		
 	}
+		
 	void CheckStage(const int& stage, const int& hall)
 	{
 		
