@@ -1,2 +1,6 @@
 #pragma once
-void GameOver(const int& hall, animatronic* caller);
+#include"Animatronic.h"
+
+class animatronic;
+
+void GameOver(const int hall, animatronic* caller);

@@ -6,6 +6,8 @@
 #include <cstdlib>
 #include <ctime>
 
+//void GameOver(const int& hall, animatronic* caller);
+
 class animatronicStages
 {
 	int arraybuffer = 0;

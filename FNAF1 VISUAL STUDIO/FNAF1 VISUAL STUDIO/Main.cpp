@@ -28,16 +28,16 @@ enum cameras
 };
 
 
-void GameOver(const int& hall, animatronic* caller)
+void GameOver(const int hall, animatronic* caller)
 {
 	if (hall == 1 || Rdoorclosed == false)
 	{
-		Print("GameOver :(");
+		Print("Gameover :(");
 		isgameon = false;
 	}
 	else if (hall == 2 || Ldoorclosed == false)
 	{
-		Print("GameOver :(");
+		Print("Gameover :(");
 		isgameon = false;
 	}
 	else if (Ldoorclosed == true)
