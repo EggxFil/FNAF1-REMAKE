@@ -66,7 +66,7 @@ public:
 		}
 		else if (randomNum == 1)
 		{
-			Print("step not taken");
+			//Print("step not taken");
 		}
 	}
 
@@ -74,11 +74,11 @@ public:
 	{
 		if (Name == "Freddy" || Name == "Chika")
 		{
-			Print("step taken");
+			//Print("step taken");
 			if (*RightHall != 5)
 			{
 				(*RightHall)++;
-				Print(*RightHall);
+				//Print(*RightHall);
 
 			}
 			else if (*RightHall == 5)
@@ -93,11 +93,11 @@ public:
 		}
 		else if (Name == "Bonnie" || Name == "Foxy")
 		{
-			Print("step taken");
+			//Print("step taken");
 			if (*LeftHall != 5)
 			{
 				LeftHall++;
-				Print(*LeftHall);
+				//Print(*LeftHall);
 
 			}
 			else if (*LeftHall == 5)

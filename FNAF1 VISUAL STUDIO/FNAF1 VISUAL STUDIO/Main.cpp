@@ -174,7 +174,7 @@ void gameloop()
 		Freddy.RandStep();
 		Bonnie.RandStep();
 		Chika.RandStep();
-		
+		Print("----------------------------------------------------");
 	}
 }
 

@@ -2,8 +2,8 @@
 #include <string>
 
 
-bool Ldoorclosed;
-bool Rdoorclosed;
+extern bool Ldoorclosed;
+extern bool Rdoorclosed;
 void printMap();
 
 void Mapupdate(const int&& num);
